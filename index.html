@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+	<title>Bot</title>
+</head>
+	
+<body>
+	<div class="wrapper" id='wrap'>
+		<div class="humen">
+			<img src="img/img_avatar.png" alt="img">
+			<span class="massege">Сообщение от Николая</span>
+		</div>
+		<div class="bot">
+			<img src="http://icons.iconarchive.com/icons/iconshock/futurama/48/bender-icon.png" alt="img">
+			<span class="massege">Сообщение от бота</span>
+		</div>
+		<br>
+		<div class="blank"></div>
+	</div>
+
+	<div class="box">
+		<input id="inp" type="text" placeholder="text">
+		<button id="btn" onclick="push()">Отправить</button>
+	</div>
+
+
+	<script>
+
+		function push(){
+			let wrap = document.getElementById('wrap');
+			let massege;
+			massege = document.getElementById('inp').value;
+
+			let div = document.createElement('div');
+			div.className = 'humen';
+			wrap.appendChild(div);
+			let img = document.createElement('img');
+			let span = document.createElement('span');
+			img.src = 'img/img_avatar.png';
+			span.className = 'massege';
+			span.innerText = massege;
+			div.appendChild(img);
+			div.appendChild(span);
+
+			answerBot(massege);
+		}
+
+
+		function answerBot(ask){
+			wrap = document.getElementById('wrap');
+			let massege;
+			massege = aswerQuestion(ask);
+
+			let div = document.createElement('div');
+			div.className = 'bot';
+			wrap.appendChild(div);
+			let img = document.createElement('img');
+			let span = document.createElement('span');
+			img.src = 'http://icons.iconarchive.com/icons/iconshock/futurama/48/bender-icon.png';
+			span.className = 'massege';
+			span.innerText = massege;
+			div.appendChild(img);
+			div.appendChild(span);
+
+
+
+		}
+
+
+		function aswerQuestion (askQuestion){
+			if(askQuestion == 'привет'){
+				return 'Привет!';
+			}else if( askQuestion == 'доброе утро!'){
+				return 'Доброе';
+			}else if( askQuestion == 'как дела?'){
+				return 'Спасибо!)) У меня все нормально.';
+			}else if( askQuestion == null){
+				return 'Ну не хочешь общатся и не надо!';
+			}else{
+				return 'la la la';    
+			}
+		}
+
+
+
+
+
+		// let bot = prompt('ПОГОВОРИ СО МНОЙ', '');
+		// if(bot == 'привет'){
+		// 	alert('Привет!))');
+		// }else if( bot == 'доброе утро!'){
+		// 	alert('Доброе');
+		// }else if( bot == 'как дела?'){
+		// 	alert('Спасибо!)) У меня все нормально.');
+		// }else if( bot == null){
+		// 	alert('Ну не хочешь общатся и не надо!');
+		// }else{
+		// 	alert('la la la');    
+		// }
+
+		// let bot2 = prompt('Что сегодня делаешь?', '');
+		// if(bot2 == 'занемаюсь' || bot2 == 'работаю' || bot2 == 'учусь'){
+		// 	alert('Правельно тоже надо!');
+		// }else if(bot2 == null){
+		// 	alert('Зря!!!');
+		// }else{
+		// 	alert('lalala');
+		// }
+
+		// let bot3 = prompt('Как бизнес?', '');
+		// if(bot3 == 'хорошо' || bot3 == 'класс'){
+		// 	alert('Красавчик)))');
+		// }else if(bot3 == 'у меня его нет' || bot3 == 'не занемаюсь'){
+		// 	alert('Ты попробуй что-то прибумать, хоть какой то пасивнный доход');
+		// }else if ( bot3 == null){
+		// 	alert('Зря!!!');
+		// }else{
+		// 	alert('lalala');
+		// }
+
+
+		// let bot4 = prompt('Ну ладна мне надо идти по делам!', '');
+		// if(bot4 == 'пака' || bot4 == 'до скорой встречи' || bot4 == 'счастливо'){
+		// 	alert('Пака!!!');
+		// }else{
+		// 	alert('до скорой встречи');
+		// }
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
